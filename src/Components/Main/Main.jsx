@@ -10,7 +10,7 @@ function Main() {
         <p>Брось себе вызов. Отправься в путешествия в дикие уголки природы.</p>
       </div>
       <div styleName="main__form">
-        <h3>Быстры вызов тура</h3>
+        <h3>Быстрый поиск тура</h3>
         <form styleName="form">
           <div styleName="form__search">
             <input type="text" placeholder="Куда" />
@@ -24,7 +24,7 @@ function Main() {
             <input type="text" placeholder="Тип тура" />
             <img src="./assets/icons/down_arrow.png" alt="arrow" />
           </div>
-          <div styleName="search__btn">Найти</div>
+          <div styleName="main__form-button">Найти</div>
         </form>
       </div>
     </div>

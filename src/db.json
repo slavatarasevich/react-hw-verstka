@@ -1,0 +1,21 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "userName": "Slava",
+      "email": "slava@gmail.com"
+    },
+    {
+      "id": 2,
+      "userName": "Lera",
+      "email": "lera@gmail.com"
+    },
+    {
+      "id": 3,
+      "userName": "Nikol",
+      "email": "nikol@gmail.com"
+    }
+  ],
+  "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
+  "profile": { "name": "typicode" }
+}

@@ -1,4 +1,8 @@
-.container {
-  margin: 0 auto;
-  font-size: 55px;
+h2 {
+  text-align: center;
+  margin-bottom: 45px;
+}
+.wrapper__card {
+  display: flex;
+  flex-direction: row;
 }

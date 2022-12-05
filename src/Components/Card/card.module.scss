@@ -1,0 +1,18 @@
+.wrapper__card {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  max-width: 240px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  img {
+    margin-bottom: 17px;
+  }
+  span {
+    text-align: center;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
