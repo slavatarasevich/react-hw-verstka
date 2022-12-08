@@ -4,13 +4,13 @@ import style from "./app.module.scss";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
-import AuthForm from "../Auth/AuthForm";
+import ModalAuth from "../ModalAuth/ModalAuth";
 
 function App() {
   const [authorized, setAuthorized] = useState(false);
 
   if (!authorized) {
-    return <AuthForm setAuthorized={setAuthorized} />;
+    return <ModalAuth setAuthorized={setAuthorized} />;
   }
 
   return (

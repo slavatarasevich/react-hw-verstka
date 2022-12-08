@@ -1,11 +1,16 @@
 .reg__form__wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   max-width: 1128px;
   width: 100%;
   margin: 0 auto;
+
+  .back__to__auth {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+  }
 
   .reg__form {
     display: flex;
@@ -22,6 +27,11 @@
 
   h1 {
     color: #ffb800;
+    margin-bottom: 30px;
+    padding-top: 30px;
+  }
+  h2 {
+    color: red;
     margin-bottom: 30px;
     padding-top: 30px;
   }
@@ -44,5 +54,12 @@
     cursor: pointer;
     border-radius: 5px;
     margin-bottom: 25px;
+  }
+
+  span {
+    cursor: pointer;
+    position: relative;
+    top: 15px;
+    left: -300px;
   }
 }
