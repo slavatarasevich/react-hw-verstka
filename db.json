@@ -14,8 +14,21 @@
       "id": 3,
       "userName": "Nikol",
       "email": "nikol@gmail.com"
+    },
+    {
+      "userName": "sqsq",
+      "email": "qsqs",
+      "id": 4
     }
   ],
-  "adminProfile": [{ "id": 1, "adminName": "admin", "password": "admin" }],
-  "profile": { "name": "typicode" }
+  "adminProfile": [
+    {
+      "id": 1,
+      "adminName": "admin",
+      "password": "admin"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
 }

@@ -4,19 +4,22 @@ import PostServices from "../../Services/PostServices";
 import style from "./modalReg.module.scss";
 
 function ModalReg({ setRegistered }) {
-  const [nameUser, SetNameUser] = useState("");
-  const [emailUser, SetEmailUser] = useState("");
+  const [userName, SetUserName] = useState("");
+  const [email, SetEmail] = useState("");
   const [error, setError] = useState(false);
   const [successfully, setSuccessfully] = useState(false);
 
   async function handleAddUser() {
-    const resultStatus = await PostServices.regUsers(nameUser, emailUser);
-
-    if (nameUser !== "" && emailUser !== "")
+    if (userName !== "" && email !== "") {
+      const resultStatus = await PostServices.regUsers(userName, email);
       if (resultStatus === 201) {
         setSuccessfully(true);
+        setTimeout(() => {
+          setRegistered(false);
+        }, 1000);
         return;
       }
+    }
     setError(true);
   }
 
@@ -40,7 +43,7 @@ function ModalReg({ setRegistered }) {
           {error && <h2>Check entered data</h2>}
           <input
             onChange={(e) => {
-              SetNameUser(e.target.value);
+              SetUserName(e.target.value);
             }}
             type="text"
             placeholder="your name"
@@ -48,7 +51,7 @@ function ModalReg({ setRegistered }) {
           />
           <input
             onChange={(e) => {
-              SetEmailUser(e.target.value);
+              SetEmail(e.target.value);
             }}
             type="text"
             placeholder="email"

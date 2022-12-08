@@ -13,38 +13,36 @@ function ModalAuth({ setAuthorized }) {
   const [valuePass, setValuePass] = useState("");
   const [admin, setAdmin] = useState(false);
 
-  function changeValue(event) {
-    setValue(event.target.value);
-  }
-
   async function checkUser() {
     if (value === "admin") {
       setPass(true);
-      let adminProfile = await GetServices.getAdmin();
-
+      const adminProfile = await GetServices.getAdmin();
       if (adminProfile[0].password === valuePass) {
-        return setAdmin(true);
-      }
-
-      const authUsers = await GetServices.getUsers();
-      const filterUserArr = authUsers.filter((item) => item.userName === value);
-
-      if (filterUserArr.length > 0) {
-        setAuthorized(true);
+        setAdmin(true);
         return;
       }
-      setTimeout(() => {
-        setError(false);
-      }, 1500);
-      setError(true);
-      setValue("");
+      return;
     }
+
+    const authUsers = await GetServices.getUsers();
+    const filterUserArr = authUsers.filter((item) => item.userName === value);
+    if (filterUserArr.length > 0) {
+      setAuthorized(true);
+      return;
+    }
+    setTimeout(() => {
+      setError(false);
+    }, 1500);
+    setError(true);
+    setValue("");
   }
 
   function registration() {
-    setRegistered(false);
+    return setRegistered(false);
   }
-
+  function changeValue(event) {
+    setValue(event.target.value);
+  }
   if (!registered) {
     return <RegForm setRegistered={setRegistered} />;
   }
@@ -71,6 +69,7 @@ function ModalAuth({ setAuthorized }) {
             }}
             type="password"
             placeholder="password"
+            value={valuePass}
           ></input>
         )}
         <div styleName="send__reg__btns">

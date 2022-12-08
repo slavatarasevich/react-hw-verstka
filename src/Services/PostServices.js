@@ -1,7 +1,7 @@
 import axios from "axios";
 
 class PostServices {
-  static async regUsers(nameUser, emailUser) {
+  static async regUsers(userName, email) {
     try {
       const result = await axios.post(" http://localhost:3001/posts", {
         userName,
