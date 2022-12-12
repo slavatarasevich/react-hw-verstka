@@ -15,7 +15,7 @@ function ModalReg({ setRegistered }) {
       if (resultStatus === 201) {
         setSuccessfully(true);
         setTimeout(() => {
-          setRegistered(false);
+          setRegistered(true);
         }, 1000);
         return;
       }
