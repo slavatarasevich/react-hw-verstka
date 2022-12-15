@@ -1,14 +1,22 @@
 {
   "posts": [
     {
-      "userName": "Lera",
-      "email": "lera@gmail.com",
+      "userName": "Valeria",
+      "email": "lerasw@gmail.com",
+      "status": 404,
       "id": 2
     },
     {
-      "userName": "Dima",
-      "email": "dima@gmail.com",
+      "userName": "Slavaa",
+      "email": "slava@gmail.com",
+      "status": 400,
       "id": 3
+    },
+    {
+      "userName": "dimaaaaas",
+      "email": "dima@gmail.com",
+      "status": 200,
+      "id": 4
     }
   ],
   "adminProfile": [
