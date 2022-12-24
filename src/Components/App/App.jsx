@@ -5,19 +5,20 @@ import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import ModalAuth from "../ModalAuth/ModalAuth";
+import { NavLink, Routes, Route } from "react-router-dom";
+import PageTour from "../Pages/PageTour";
 
 function App() {
-  const [authorized, setAuthorized] = useState(false);
-
-  if (!authorized) {
-    return <ModalAuth setAuthorized={setAuthorized} />;
-  }
-
   return (
     <div styleName="container">
-      <Header />
-      <Main />
-      <Footer />
+      <NavLink end to="/">
+        Exit
+      </NavLink>
+
+      <Routes>
+        <Route path="/" element={<ModalAuth />} />
+        <Route path="/tour" element={<PageTour />} />
+      </Routes>
     </div>
   );
 }

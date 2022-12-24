@@ -4,30 +4,23 @@ import style from "./modalAuth.module.scss";
 import RegForm from "../ModalReg/ModalReg";
 import GetServices from "../../Services/GetServices";
 import Admin from "../Admin/Admin";
+import { Link } from "react-router-dom";
 
 function ModalAuth({ setAuthorized }) {
   const [value, setValue] = useState("");
   const [registered, setRegistered] = useState(true);
+  const [flag, setFlag] = useState(false);
   const [error, setError] = useState(false);
   const [pass, setPass] = useState(false);
   const [valuePass, setValuePass] = useState("");
   const [admin, setAdmin] = useState(false);
 
   async function checkUser() {
-    if (value === "admin") {
-      setPass(true);
-      const adminProfile = await GetServices.getAdmin();
-      if (adminProfile[0].password === valuePass) {
-        setAdmin(true);
-        return;
-      }
-      return;
-    }
-
     const authUsers = await GetServices.getUsers();
     const filterUserArr = authUsers.filter((item) => item.userName === value);
+
     if (filterUserArr.length > 0) {
-      setAuthorized(true);
+      setFlag(true);
       return;
     }
     setTimeout(() => {
@@ -73,7 +66,9 @@ function ModalAuth({ setAuthorized }) {
           ></input>
         )}
         <div styleName="send__reg__btns">
-          <button onClick={checkUser}>Log in</button>
+          <button>
+            <Link to={flag ? "/tour" : "/"}>Log in</Link>
+          </button>
           <button onClick={registration}>Register</button>
         </div>
       </div>
@@ -82,3 +77,13 @@ function ModalAuth({ setAuthorized }) {
 }
 
 export default CSSModules(ModalAuth, style);
+
+// if (value === "admin") {
+//       setPass(true);
+//       const adminProfile = await GetServices.getAdmin();
+//       if (adminProfile[0].password === valuePass) {
+//         setAdmin(true);
+//         return;
+//       }
+//       return;
+//     }
